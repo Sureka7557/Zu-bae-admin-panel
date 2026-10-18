@@ -1,32 +1,94 @@
-# React + TypeScript + Vite
+# Zu-Bae Store – Admin Panel
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive e-commerce admin dashboard built with React, TypeScript, and Vite to manage products, orders, customers, and reviews. Features a premium burgundy-themed UI with sales analytics and efficient store management.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 📊 **Dashboard** – View sales analytics, revenue, orders, and recent activity.
+- 🛍️ **Product Management** – Manage products, categories, and stock availability.
+- 📦 **Order Management** – Track orders and update order statuses.
+- 👥 **Customer Management** – View and manage customer information.
+- ⭐ **Customer Reviews** – View, search, and filter customer feedback.
+- 🔐 **Authentication** – Secure admin access using Clerk.
+- 🎨 **Responsive UI** – Modern dashboard with a premium burgundy color palette.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Clerk Authentication
+- REST API
+- CSS
+- Git and GitHub
 
-## Expanding the Oxlint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### 1. Clone the repository
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. Navigate to the project directory
+
+```bash
+cd admin
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file in the admin project root and configure the required values:
+
+```env
+VITE_API_URL=YOUR_BACKEND_API_URL
+```
+
+Add any other environment variables required by your project. Never expose secret keys in frontend environment variables.
+
+### 5. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## 🔗 Backend
+
+The admin panel communicates with the Zu-Bae Store backend through REST API endpoints for product, order, customer, review, and dashboard data.
+
+Configure `VITE_API_URL` with your deployed backend URL.
+
+## 🔒 Security
+
+- Keep secret keys and credentials out of the frontend.
+- Store sensitive environment variables securely on the backend.
+- Ensure admin API endpoints enforce authentication and authorization.
+- Add `.env` files to `.gitignore`.
+
+## 👩‍💻 Author
+
+**Sureka K.**
+
+## 📄 License
+
+This project is developed for the Zu-Bae Store e-commerce platform.
