@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+/* Always render the light theme, so browsers / extensions in dark mode
+   can never paint a black page behind the app. */
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #f4f0eb;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Selection & Focus
+   ============================================================ */
+
+::selection {
+  background-color: rgba(200, 164, 107, 0.35);
+  color: #20100f;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #c8a46b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(200, 164, 107, 0.28),
+    0 0 0 1px #c8a46b;
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 27, 37, 0.25);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 27, 37, 0.45);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 27, 37, 0.3) transparent;
+}
+
+/* ============================================================
+   Elevation System
+   ============================================================ */
+
+@utility shadow-elegant-xs {
+  box-shadow: 0 1px 2px rgba(32, 16, 15, 0.04);
+}
+
+@utility shadow-elegant-sm {
+  box-shadow:
+    0 1px 3px rgba(32, 16, 15, 0.06),
+    0 1px 2px rgba(32, 16, 15, 0.04);
+}
+
+@utility shadow-elegant-md {
+  box-shadow:
+    0 4px 12px rgba(32, 16, 15, 0.07),
+    0 2px 4px rgba(32, 16, 15, 0.05);
+}
+
+@utility shadow-elegant-lg {
+  box-shadow:
+    0 12px 28px rgba(32, 16, 15, 0.1),
+    0 4px 8px rgba(32, 16, 15, 0.06);
+}
+
+@utility shadow-elegant-gold {
+  box-shadow: 0 6px 20px rgba(200, 164, 107, 0.25);
+}
+
+/* ============================================================
+   Motion
+   ============================================================ */
+
+@utility transition-elegant {
+  transition-property:
+    box-shadow,
+    transform,
+    background-color,
+    border-color,
+    color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility card-hoverable {
+  transition-property:
+    box-shadow,
+    transform,
+    background-color,
+    border-color,
+    color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(32, 16, 15, 0.04);
+}
+
+.card-hoverable:hover {
+  box-shadow:
+    0 4px 12px rgba(32, 16, 15, 0.07),
+    0 2px 4px rgba(32, 16, 15, 0.05);
+  transform: translateY(-1px);
+}
+
+@utility btn-elegant {
+  transition-property:
+    box-shadow,
+    transform,
+    background-color,
+    border-color,
+    color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 1px 3px rgba(32, 16, 15, 0.06),
+    0 1px 2px rgba(32, 16, 15, 0.04);
+}
+
+.btn-elegant:hover {
+  box-shadow:
+    0 4px 12px rgba(32, 16, 15, 0.07),
+    0 2px 4px rgba(32, 16, 15, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-elegant:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ============================================================
+   Table Row Hover
+   ============================================================ */
+
+@utility row-hoverable {
+  transition: background-color 150ms ease;
+}
+
+.row-hoverable:hover {
+  background-color: rgba(200, 164, 107, 0.06) !important;
+}
+
+/* ============================================================
+   Page Enter Animation
+   ============================================================ */
+
+@utility fade-in-elegant {
+  animation: fadeInElegant 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fadeInElegant {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
